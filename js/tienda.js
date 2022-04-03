@@ -38,10 +38,25 @@ updateCart();
 
 // ADD TO CART
 function addToCart(id) {
-  // check if prodcut already exist in cart
   if (cart.some((item) => item.id === id)) {
+    Swal.fire({
+      title: "El producto fue agregado correctamente al carrito",
+      icon: "success",
+      timer: 4000,
+      timerProgressBar: true,
+      toast: true,
+      position: "top-end",
+    });
     changeNumberOfUnits("plus", id);
   } else {
+    Swal.fire({
+      title: "El producto fue agregado correctamente al carrito",
+      icon: "success",
+      timer: 4000,
+      timerProgressBar: true,
+      toast: true,
+      position: "top-end",
+    });
     const item = products.find((product) => product.id === id);
 
     cart.push({
