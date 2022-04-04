@@ -38,25 +38,27 @@ updateCart();
 
 // ADD TO CART
 function addToCart(id) {
+  const sweetA = Swal.fire({
+    title: `El artículo fue agregado correctamente al carrito`,
+    icon: "success",
+    timer: 2000,
+    timerProgressBar: true,
+    toast: true,
+    position: "top-end",
+    background: "url(./img/golf-ball.jpg)",
+    showClass: {
+      popup: "animate__animated animate__bounceInRight",
+    },
+    hideClass: {
+      popup: "animate__animated animate__bounceOutRight",
+    },
+  });
+
   if (cart.some((item) => item.id === id)) {
-    Swal.fire({
-      title: "El producto fue agregado correctamente al carrito",
-      icon: "success",
-      timer: 4000,
-      timerProgressBar: true,
-      toast: true,
-      position: "top-end",
-    });
+    sweetA;
     changeNumberOfUnits("plus", id);
   } else {
-    Swal.fire({
-      title: "El producto fue agregado correctamente al carrito",
-      icon: "success",
-      timer: 4000,
-      timerProgressBar: true,
-      toast: true,
-      position: "top-end",
-    });
+    sweetA;
     const item = products.find((product) => product.id === id);
 
     cart.push({

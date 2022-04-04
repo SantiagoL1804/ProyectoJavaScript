@@ -48,3 +48,6 @@ const products = [
     imgSrc: "./img/bolsa.png",
   },
 ];
+
+let id = products.id;
+console.log(id);
